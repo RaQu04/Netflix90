@@ -7,12 +7,13 @@ import lombok.ToString;
 @Getter
 @Setter
 
-public abstract class Person {
+public abstract class Person{
     protected String firstName;
     protected String lastName;
     protected final Gender gender;
 
     public Person(String firstName, String lastName, Gender gender) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -23,16 +24,10 @@ public abstract class Person {
         return firstName + " " + lastName;
     }
 
-//    public Person(String firstName, String lastName, Gender gender) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.gender = gender;
-//    }
+
 
     public abstract void introduce();
 
-//    public String getLastName() {
-//        return lastName;
-//    }
+
 
 }
