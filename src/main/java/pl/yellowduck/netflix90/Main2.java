@@ -12,16 +12,27 @@ public class Main2 {
     public static void main(String[] args) {
 
         Director tommy = new Director("Tommy", "Wiseau", Gender.MALE);
+
         Actor tommyActor = new Actor("Tommy", "Wiseau", Gender.MALE);
         Actor juliette = new Actor("Juliette", "Danielle", Gender.FEMALE);
         Actor greg = new Actor("Greg", "Sestero", Gender.MALE);
 
-        //List<Person> persons = new ArrayList<>();
-        List<Person> persons = List.of(tommy, tommyActor, juliette, greg);
- /*       persons.add(tommy);
-        persons.add(tommyActor);
-        persons.add(juliette);
-        persons.add(greg);*/
+        Client clientLukas = new Client("Lukasz",
+                "Rakowiecki",
+                Gender.MALE,
+                new Address("Żelazna", 24, "Poznań", "51-123", "Poland"),
+                ClientStatus.VIP);
+        Client clientOliwia = new Client("Oliwia",
+                "Splawska",
+                Gender.FEMALE,
+                new Address("Owocowa", 12, "Kalisz", "51-111", "Poland"),
+                ClientStatus.NORMAL);
+
+        List<Person> actors = List.of(tommy, tommyActor, juliette, greg);
+ /*       actors.add(tommy);
+        actors.add(tommyActor);
+        actors.add(juliette);
+        actors.add(greg);*/
 
 
         VideoCassette theRoom = new VideoCassette(
@@ -35,29 +46,23 @@ public class Main2 {
 
         theRoom.printOut();
 
-        System.out.println();
 
-        for (int i = 0; i < persons.size(); i++) {
-            Person person = persons.get(i);
+
+        for (Person person : actors) {
             person.introduce();
         }
 
-        Client clientLukas = new Client("Lukasz",
-                "Rakowiecki",
-                Gender.MALE,
-                new Address("Żelazna", 24, "Poznań", "51-123", "Poland"),
-                ClientStatus.VIP);
-        Client clientOliwia = new Client("Oliwia",
-                "Splawska",
-                Gender.FEMALE,
-                new Address("Owocowa", 12, "Kalisz", "51-111", "Poland"),
-                ClientStatus.NORMAL);
+
 
         List<Client> clients = List.of(clientLukas, clientOliwia);
+
 
         for (Client client: clients) {
             client.introduce();
         }
+
+        clientLukas.discount(theRoom);
+        clientOliwia.discount(theRoom);
 
 
 

@@ -5,12 +5,12 @@ import java.util.Set;
 
 public class VideoCassette {
 
-    private String ID;
-    private BigDecimal price;
-    private String title;
-    private Director director;
-    private Category category; //odwołanie do enuma
-    private Set<Actor> actors;
+    protected BigDecimal price;
+    protected String ID;
+    protected String title;
+    protected Director director;
+    protected Category category; //odwołanie do enuma
+    protected Set<Actor> actors;
 
     public VideoCassette(String ID, BigDecimal price, String title, Director director, Category category, Set<Actor> actors) {
         this.ID = ID;
